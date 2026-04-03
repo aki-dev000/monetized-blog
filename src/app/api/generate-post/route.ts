@@ -116,6 +116,18 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
+  // デバッグ: env変数の存在確認
+  const url = new URL(request.url)
+  if (url.searchParams.get('debug') === '1') {
+    return NextResponse.json({
+      ANTHROPIC_API_KEY: !!process.env.ANTHROPIC_API_KEY,
+      GITHUB_TOKEN: !!process.env.GITHUB_TOKEN,
+      GITHUB_OWNER: process.env.GITHUB_OWNER || null,
+      GITHUB_REPO: process.env.GITHUB_REPO || null,
+      CRON_SECRET: !!process.env.CRON_SECRET,
+    })
+  }
+
   try {
     // 既存記事を取得して重複を避ける
     const existingSlugs = await getExistingSlugs()
