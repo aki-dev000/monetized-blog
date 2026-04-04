@@ -20,6 +20,41 @@ export default async function HomePage() {
         </p>
       </section>
 
+      <section className="mb-16">
+        <div className="rounded-[32px] border-4 border-stone-900 bg-[linear-gradient(180deg,#fbf0c8_0%,#f2ddb1_100%)] p-6 shadow-[0_12px_0_0_rgba(68,50,22,0.18)] md:p-8">
+          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
+            <div>
+              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">
+                Interactive Demo
+              </p>
+              <h2 className="text-3xl font-black tracking-tight text-stone-900 md:text-4xl">
+                TechForward World
+              </h2>
+              <p className="mt-3 max-w-2xl text-sm leading-7 text-stone-700 md:text-base">
+                会社をゲームマップのように見せる組織可視化モックです。部署を建物、
+                従業員をNPC、案件をクエストとして確認できます。
+              </p>
+            </div>
+            <div className="flex flex-col gap-3 rounded-[24px] border-4 border-stone-900 bg-white/75 p-5">
+              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
+                What you can inspect
+              </p>
+              <ul className="space-y-2 text-sm text-stone-700">
+                <li>部署の配置と役割</li>
+                <li>メンバーの状態と関係線</li>
+                <li>選択中メンバーの詳細情報</li>
+              </ul>
+              <Link
+                href="/techforward-world"
+                className="inline-flex w-fit items-center gap-2 rounded-full border-4 border-stone-900 bg-stone-900 px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+              >
+                ワールドを開く <ArrowRight size={16} />
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
         <section className="mb-16">
