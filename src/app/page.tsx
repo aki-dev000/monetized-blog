@@ -13,7 +13,7 @@ export default async function HomePage() {
       {/* Hero */}
       <section className="text-center mb-16">
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
-          {process.env.NEXT_PUBLIC_SITE_NAME || 'TechBlog'}
+          {process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'}
         </h1>
         <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
           {process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Web開発・SEO・収益化の実践ブログ'}
@@ -28,11 +28,11 @@ export default async function HomePage() {
                 Interactive Demo
               </p>
               <h2 className="text-3xl font-black tracking-tight text-stone-900 md:text-4xl">
-                TechForward World
+                Neiro World
               </h2>
               <p className="mt-3 max-w-2xl text-sm leading-7 text-stone-700 md:text-base">
-                会社をゲームマップのように見せる組織可視化モックです。部署を建物、
-                従業員をNPC、案件をクエストとして確認できます。
+                Neiro Inc. をゲームマップのように見せる組織可視化モックです。部署を建物、
+                エージェントをNPC、案件をクエストとして確認できます。
               </p>
             </div>
             <div className="flex flex-col gap-3 rounded-[24px] border-4 border-stone-900 bg-white/75 p-5">

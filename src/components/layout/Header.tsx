@@ -8,7 +8,7 @@ export function Header() {
       <div className="container mx-auto px-4 max-w-6xl">
         <div className="flex items-center justify-between h-16">
           <Link href="/" className="font-bold text-xl text-gray-900 dark:text-white hover:opacity-80 transition-opacity">
-            {process.env.NEXT_PUBLIC_SITE_NAME || 'TechBlog'}
+            {process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'}
           </Link>
 
           <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">

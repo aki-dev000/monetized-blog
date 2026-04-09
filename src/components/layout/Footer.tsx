@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 export function Footer() {
   const year = new Date().getFullYear()
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'TechBlog'
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'
 
   return (
     <footer className="border-t border-gray-200 dark:border-gray-800 bg-gray-50 dark:bg-gray-950 mt-16">
@@ -11,7 +11,7 @@ export function Footer() {
           <div>
             <h3 className="font-bold text-gray-900 dark:text-white mb-3">{siteName}</h3>
             <p className="text-sm text-gray-600 dark:text-gray-400">
-              Web開発・SEO・収益化に関する実践的な情報をお届けします。
+              Neiro Inc. の技術シグナルを届けるブログ — Web開発・AI・SEO・収益化の実践情報。
             </p>
           </div>
           <div>

@@ -2,12 +2,12 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'プライバシーポリシー',
-  description: 'TechBlogのプライバシーポリシーページです。個人情報の取り扱い、広告・アクセス解析について説明します。',
+  description: 'Neiro Signalのプライバシーポリシーページです。個人情報の取り扱い、広告・アクセス解析について説明します。',
   robots: { index: true, follow: true },
 }
 
 export default function PrivacyPage() {
-  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'TechBlog'
+  const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'
   const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://monetized-blog.vercel.app'
 
   return (

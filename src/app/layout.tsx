@@ -8,7 +8,7 @@ import './globals.css'
 const inter = Inter({ subsets: ['latin'] })
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'
-const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'TechBlog'
+const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'
 const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Web開発・SEO・収益化の実践ブログ'
 
 export const metadata: Metadata = {
