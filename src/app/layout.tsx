@@ -1,15 +1,12 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import { ThemeProvider } from 'next-themes'
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import './globals.css'
 
-const inter = Inter({ subsets: ['latin'] })
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://example.com'
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://monetized-blog.vercel.app'
 const siteName = process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'
-const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Web開発・SEO・収益化の実践ブログ'
+const siteDescription = process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Neiro Inc. の技術シグナルを届けるブログ — Web開発・AI・SEO・収益化'
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -47,7 +44,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           />
         )}
       </head>
-      <body className={`${inter.className} bg-white dark:bg-gray-950 text-gray-900 dark:text-white min-h-screen flex flex-col`}>
+      <body className="min-h-screen flex flex-col">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <Header />
           <main className="flex-1">

@@ -9,64 +9,52 @@ export default async function HomePage() {
   const recentPosts = posts.slice(3, 9)
 
   return (
-    <div className="container mx-auto px-4 max-w-6xl py-12">
+    <div className="max-w-5xl mx-auto px-6 py-12">
       {/* Hero */}
-      <section className="text-center mb-16">
-        <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-4">
+      <section className="text-center mb-16 py-8">
+        <p
+          className="text-[10px] font-medium uppercase tracking-[0.3em] mb-3"
+          style={{ color: 'var(--accent-gold)' }}
+        >
+          Neiro Inc. Tech Blog
+        </p>
+        <h1
+          className="text-4xl md:text-5xl font-medium mb-4"
+          style={{ fontFamily: 'var(--font-noto-serif)' }}
+        >
           {process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'}
         </h1>
-        <p className="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">
-          {process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Web開発・SEO・収益化の実践ブログ'}
+        <p className="text-base max-w-2xl mx-auto leading-relaxed" style={{ opacity: 0.5 }}>
+          {process.env.NEXT_PUBLIC_SITE_DESCRIPTION || 'Neiro Inc. の技術シグナルを届けるブログ — Web開発・AI・SEO・収益化'}
         </p>
-      </section>
-
-      <section className="mb-16">
-        <div className="rounded-[32px] border-4 border-stone-900 bg-[linear-gradient(180deg,#fbf0c8_0%,#f2ddb1_100%)] p-6 shadow-[0_12px_0_0_rgba(68,50,22,0.18)] md:p-8">
-          <div className="grid gap-6 md:grid-cols-[1.2fr_0.8fr] md:items-end">
-            <div>
-              <p className="mb-2 text-xs font-semibold uppercase tracking-[0.28em] text-stone-600">
-                Interactive Demo
-              </p>
-              <h2 className="text-3xl font-black tracking-tight text-stone-900 md:text-4xl">
-                Neiro World
-              </h2>
-              <p className="mt-3 max-w-2xl text-sm leading-7 text-stone-700 md:text-base">
-                Neiro Inc. をゲームマップのように見せる組織可視化モックです。部署を建物、
-                エージェントをNPC、案件をクエストとして確認できます。
-              </p>
-            </div>
-            <div className="flex flex-col gap-3 rounded-[24px] border-4 border-stone-900 bg-white/75 p-5">
-              <p className="text-sm font-semibold uppercase tracking-[0.2em] text-stone-500">
-                What you can inspect
-              </p>
-              <ul className="space-y-2 text-sm text-stone-700">
-                <li>部署の配置と役割</li>
-                <li>メンバーの状態と関係線</li>
-                <li>選択中メンバーの詳細情報</li>
-              </ul>
-              <Link
-                href="/techforward-world"
-                className="inline-flex w-fit items-center gap-2 rounded-full border-4 border-stone-900 bg-stone-900 px-5 py-2 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-              >
-                ワールドを開く <ArrowRight size={16} />
-              </Link>
-            </div>
-          </div>
-        </div>
       </section>
 
       {/* Featured Posts */}
       {featuredPosts.length > 0 && (
         <section className="mb-16">
           <div className="flex items-center justify-between mb-6">
-            <h2 className="text-2xl font-bold text-gray-900 dark:text-white">最新記事</h2>
-            <Link href="/posts" className="text-blue-600 dark:text-blue-400 hover:opacity-80 flex items-center gap-1 text-sm font-medium">
-              すべて見る <ArrowRight size={16} />
+            <div>
+              <p
+                className="text-[10px] font-medium uppercase tracking-[0.3em] mb-1.5"
+                style={{ color: 'var(--accent-gold)' }}
+              >
+                Featured
+              </p>
+              <h2 className="text-2xl font-medium" style={{ fontFamily: 'var(--font-noto-serif)' }}>
+                最新記事
+              </h2>
+            </div>
+            <Link
+              href="/posts"
+              className="flex items-center gap-1 text-sm transition-opacity hover:opacity-80"
+              style={{ color: 'var(--accent-indigo)' }}
+            >
+              すべて見る <ArrowRight size={14} />
             </Link>
           </div>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
             {featuredPosts.map(post => (
-              <PostCard key={post.slug} post={post} />
+              <PostCard key={post.slug} post={post} featured />
             ))}
           </div>
         </section>
@@ -76,7 +64,17 @@ export default async function HomePage() {
         {/* Recent Posts */}
         {recentPosts.length > 0 && (
           <div className="lg:col-span-3">
-            <h2 className="text-xl font-bold text-gray-900 dark:text-white mb-6">新着記事</h2>
+            <div className="mb-6">
+              <p
+                className="text-[10px] font-medium uppercase tracking-[0.3em] mb-1.5"
+                style={{ color: 'var(--accent-gold)' }}
+              >
+                Recent
+              </p>
+              <h2 className="text-2xl font-medium" style={{ fontFamily: 'var(--font-noto-serif)' }}>
+                新着記事
+              </h2>
+            </div>
             <div className="grid gap-4">
               {recentPosts.map(post => (
                 <PostCard key={post.slug} post={post} />
@@ -87,17 +85,28 @@ export default async function HomePage() {
 
         {/* Sidebar */}
         <aside className="lg:col-span-1">
-          <div className="bg-gray-50 dark:bg-gray-900 rounded-xl p-5 mb-6">
-            <h3 className="font-bold text-gray-900 dark:text-white mb-4">カテゴリ</h3>
+          <div className="rounded-sm p-5" style={{ border: '1px solid var(--border-warm)' }}>
+            <p
+              className="text-[10px] font-medium uppercase tracking-[0.3em] mb-3"
+              style={{ color: 'var(--accent-gold)' }}
+            >
+              Categories
+            </p>
             <ul className="space-y-2">
               {categories.map(cat => (
                 <li key={cat.name}>
                   <Link
                     href={`/categories/${encodeURIComponent(cat.name)}`}
-                    className="flex items-center justify-between text-sm text-gray-700 dark:text-gray-300 hover:text-blue-600 dark:hover:text-blue-400 transition-colors"
+                    className="flex items-center justify-between text-sm transition-opacity hover:opacity-70"
+                    style={{ opacity: 0.6 }}
                   >
                     <span>{cat.name}</span>
-                    <span className="text-xs bg-gray-200 dark:bg-gray-800 rounded-full px-2 py-0.5">{cat.count}</span>
+                    <span
+                      className="text-[10px] px-2 py-0.5 rounded-sm"
+                      style={{ background: 'color-mix(in srgb, var(--accent-gold) 12%, transparent)', color: 'var(--accent-gold)' }}
+                    >
+                      {cat.count}
+                    </span>
                   </Link>
                 </li>
               ))}

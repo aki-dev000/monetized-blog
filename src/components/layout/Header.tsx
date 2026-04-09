@@ -4,22 +4,46 @@ import { Search } from 'lucide-react'
 
 export function Header() {
   return (
-    <header className="sticky top-0 z-50 border-b border-gray-200 dark:border-gray-800 bg-white/95 dark:bg-gray-950/95 backdrop-blur supports-[backdrop-filter]:bg-white/60 dark:supports-[backdrop-filter]:bg-gray-950/60">
-      <div className="container mx-auto px-4 max-w-6xl">
-        <div className="flex items-center justify-between h-16">
-          <Link href="/" className="font-bold text-xl text-gray-900 dark:text-white hover:opacity-80 transition-opacity">
-            {process.env.NEXT_PUBLIC_SITE_NAME || 'Neiro Signal'}
+    <header
+      className="sticky top-0 z-50 backdrop-blur supports-[backdrop-filter]:bg-[var(--background)]/80"
+      style={{ borderBottom: '1px solid var(--border-warm)' }}
+    >
+      <div className="max-w-5xl mx-auto px-6">
+        <div className="flex items-center justify-between h-14">
+          <Link href="/" className="group flex items-center gap-2 transition-opacity hover:opacity-80">
+            <span
+              className="text-[10px] font-light tracking-[0.35em] uppercase"
+              style={{ color: 'var(--accent-gold)' }}
+            >
+              Neiro
+            </span>
+            <span
+              className="text-[13px] font-medium tracking-[0.08em]"
+              style={{ opacity: 0.7 }}
+            >
+              Signal
+            </span>
           </Link>
 
-          <nav className="hidden md:flex items-center gap-6 text-sm font-medium text-gray-600 dark:text-gray-400">
-            <Link href="/posts" className="hover:text-gray-900 dark:hover:text-white transition-colors">記事一覧</Link>
-            <Link href="/categories" className="hover:text-gray-900 dark:hover:text-white transition-colors">カテゴリ</Link>
-            <Link href="/tags" className="hover:text-gray-900 dark:hover:text-white transition-colors">タグ</Link>
+          <nav className="hidden md:flex items-center gap-6 text-sm" style={{ opacity: 0.5 }}>
+            <Link href="/posts" className="transition-colors duration-300 hover:opacity-100" style={{ opacity: 0.8 }}>
+              記事一覧
+            </Link>
+            <Link href="/categories" className="transition-colors duration-300 hover:opacity-100" style={{ opacity: 0.8 }}>
+              カテゴリ
+            </Link>
+            <Link href="/tags" className="transition-colors duration-300 hover:opacity-100" style={{ opacity: 0.8 }}>
+              タグ
+            </Link>
           </nav>
 
           <div className="flex items-center gap-2">
-            <Link href="/search" className="p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors" aria-label="検索">
-              <Search size={20} />
+            <Link
+              href="/search"
+              className="p-2 rounded-sm transition-colors hover:opacity-70"
+              aria-label="検索"
+            >
+              <Search size={18} />
             </Link>
             <ThemeToggle />
           </div>
